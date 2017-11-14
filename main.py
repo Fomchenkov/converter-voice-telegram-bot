@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+import time
+
 import telebot
 
 
-TOKEN = '387480715:AAGE4QwIkF6OaTaCln8vB4eAWPwD8Nes_fM'
+TOKEN = ''
 bot = telebot.TeleBot(TOKEN)
 
 
@@ -23,4 +25,9 @@ def audio_handler(message):
 
 
 if __name__ == '__main__':
-	bot.polling(none_stop=True)
+	while True:
+		try:
+			bot.polling(none_stop=True)
+		except Exception as e:
+			print(e)
+			time.sleep(30)
