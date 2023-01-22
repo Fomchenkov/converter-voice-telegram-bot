@@ -17,6 +17,6 @@ def audio_handler(message):
 	#print(f"message.audio.file_id: {message.audio.file_id}\nfile_info: {file_info}\n\n")
 	downloaded_file = bot.download_file(file_info.file_path)
 	#print(f"file_info.file_path: {file_info.file_path}\n")
-	bot.send_voice(message.chat.id, downloaded_file)
+	bot.send_voice(message.chat.id, downloaded_file, caption=message.caption)
 
 bot.infinity_polling()
